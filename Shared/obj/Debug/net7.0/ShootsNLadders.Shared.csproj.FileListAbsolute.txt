@@ -1,0 +1,12 @@
+/Users/rileypowers/Projects/ShootsNLadders/Shared/bin/Debug/net7.0/ShootsNLadders.Shared.deps.json
+/Users/rileypowers/Projects/ShootsNLadders/Shared/bin/Debug/net7.0/ShootsNLadders.Shared.dll
+/Users/rileypowers/Projects/ShootsNLadders/Shared/bin/Debug/net7.0/ShootsNLadders.Shared.pdb
+/Users/rileypowers/Projects/ShootsNLadders/Shared/obj/Debug/net7.0/ShootsNLadders.Shared.csproj.AssemblyReference.cache
+/Users/rileypowers/Projects/ShootsNLadders/Shared/obj/Debug/net7.0/ShootsNLadders.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rileypowers/Projects/ShootsNLadders/Shared/obj/Debug/net7.0/ShootsNLadders.Shared.AssemblyInfoInputs.cache
+/Users/rileypowers/Projects/ShootsNLadders/Shared/obj/Debug/net7.0/ShootsNLadders.Shared.AssemblyInfo.cs
+/Users/rileypowers/Projects/ShootsNLadders/Shared/obj/Debug/net7.0/ShootsNLadders.Shared.csproj.CoreCompileInputs.cache
+/Users/rileypowers/Projects/ShootsNLadders/Shared/obj/Debug/net7.0/ShootsNLadders.Shared.dll
+/Users/rileypowers/Projects/ShootsNLadders/Shared/obj/Debug/net7.0/refint/ShootsNLadders.Shared.dll
+/Users/rileypowers/Projects/ShootsNLadders/Shared/obj/Debug/net7.0/ShootsNLadders.Shared.pdb
+/Users/rileypowers/Projects/ShootsNLadders/Shared/obj/Debug/net7.0/ref/ShootsNLadders.Shared.dll

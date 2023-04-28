@@ -1,0 +1,216 @@
+﻿@using Client.Data
+
+@code{
+    Random rand = new Random();
+    List<Player> players = new List<Player>();
+    string[] colors = { "white", "black" };
+    int active_num = 1;
+    int snl = 0;
+    string win_msg = string.Empty;
+    bool has_won = false;
+    int no_dbl_ws = 0;
+
+    protected override void OnInitialized()
+    {
+
+        for (int i = 0; i < 2; i++)
+        {
+            players.Add(new Player
+            {
+                pos = 0,
+                id = i + 1,
+                win_total = 0,
+                clr = colors[i]
+            });
+        }
+        
+    }
+
+    public void Reset()
+    {
+        active_num = 1;
+        win_msg = "";
+        has_won = false;
+        no_dbl_ws = 0;
+
+        foreach (Player x in players)
+        {
+            x.pos = 0;
+        }
+    }
+
+    public int ShootsAndLadders(int pos_0)
+    {
+        int pos_f;
+        switch (pos_0)
+        {
+            case 1: pos_f = 38; break;
+            case 4: pos_f = 14; break;
+            case 9: pos_f = 31; break;
+            case 16: pos_f = 6; break;
+            case 21: pos_f = 42; break;
+            case 28: pos_f = 84; break;
+            case 47: pos_f = 26; break;
+            case 49: pos_f = 11; break;
+            case 51: pos_f = 67; break;
+            case 56: pos_f = 53; break;
+            case 62: pos_f = 19; break;
+            case 64: pos_f = 60; break;
+            case 71: pos_f = 91; break;
+            case 80: pos_f = 100; break;
+            case 87: pos_f = 24; break;
+            case 93: pos_f = 73; break;
+            case 96: pos_f = 75; break;
+            case 98: pos_f = 78; break;
+            default: pos_f = pos_0; break;
+        };
+
+        if (pos_f > pos_0)
+        {
+            snl = 1;
+        }
+        if (pos_f < pos_0)
+        {
+            snl = -1;
+        }
+
+        return pos_f;
+    }
+
+    public void Move_White()
+    {
+        int move = rand.Next(10) + 1;
+
+        if (players[0].pos + move <= 100)
+        {
+            players[0].pos += move;
+        }
+
+        players[0].pos = ShootsAndLadders(players[0].pos);
+        active_num++;
+    }
+
+    public void Move_Black()
+    {
+        int move = rand.Next(10) + 1;
+
+        if (players[1].pos + move <= 100)
+        {
+            players[1].pos += move;
+        }
+
+        players[1].pos = ShootsAndLadders(players[1].pos);
+        active_num--;
+    }
+
+}
+
+@for (int i = 9; i >= 0; i--)
+{
+    <div class="row">
+        @for (int j = 0; j < 10; j++)
+        {
+            int p;
+            @if (i % 2 == 1)
+            {
+                p = i * 10 + 10 - j;
+            }
+            else { p = i * 10 + j + 1; }
+
+            var body = players.FirstOrDefault(n => n.pos == p); // find the first Player object in the "players" list that has a matching col and row property
+
+            <div class="cell">
+                @p
+
+                @if (body != null)
+                {
+
+                    <div class=" body @body.clr"></div>
+
+                }
+
+
+            </div>
+
+        }
+    </div>
+}
+
+<div>
+    @foreach (Player x in players)  //win check
+    {
+        if (x.pos == 100)
+        {
+            has_won = true;
+            win_msg = "Congratulations " + x.clr + ", you won!";
+            <h1>@win_msg</h1>
+
+            if (x.id == 1 && no_dbl_ws < 1)
+            {
+                x.win_total++;
+                no_dbl_ws++;
+                <button @onclick="Move_Black"> Move Black </button>
+                <br/>
+            }
+            if (x.id == 2)
+            {
+                x.win_total++;
+            }
+        }
+    }
+    @if (has_won)
+    {
+    <button @onclick="Reset"> Reset </button>
+    }
+
+</div>
+
+
+<div>
+
+    @if (!has_won)
+    {
+        @if (players[0].id == active_num) //move pieces
+        {
+            <button @onclick="Move_White"> Move White </button>
+        }
+        else
+        {
+            <button @onclick="Move_Black"> Move Black </button>
+        }
+    }
+
+</div>
+
+
+<div>
+    @if (snl > 0)
+    {
+        <h3 class="ladder">Ladder</h3>
+        <img src="https://media.istockphoto.com/id/186221924/vector/wooden-ladder.jpg?s=612x612&w=0&k=20&c=9m8ycDB641nwIbe0dvTYgsp9Xr5avbGJ3itZqDF00m0="
+             height="300" width="200" />
+        snl = 0;
+    }
+
+    @if (snl < 0)
+    {
+        <h3 class="slide">Slide</h3>
+        <img src="https://www.misskatecuttables.com/uploads/shopping_cart/7468/large_slide.png" />
+        snl = 0;
+    }
+</div>
+
+<div>
+    <br />
+    <h5>Score Board</h5>
+    <table class="table">
+        <tr bgcolor="grey">
+            <th class="table" width="150px">White</th>
+            <th class="table" width="150px">Black</th>
+        </tr>
+        <tr bgcolor="lightgrey">
+            <td class="table" width="150px">@players[0].win_total</td>
+            <td class="table" width="150px">@players[1].win_total</td>
+        </tr>
+    </table>
+</div>

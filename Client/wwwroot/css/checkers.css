@@ -1,0 +1,56 @@
+﻿.row {
+}
+
+.cell {
+    height: 70px;
+    width: 70px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.row:nth-child(2n) .cell:nth-child(2n+1) {
+    background: tan
+ }
+.row:nth-child(2n+1) .cell:nth-child(2n) {
+    background: tan
+}
+
+.row:nth-child(2n+1) .cell:nth-child(2n+1) {
+    background: yellow
+}
+
+.row:nth-child(2n) .cell:nth-child(2n) {
+    background: yellow
+}
+
+.body {
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    border: 1px solid;
+
+}
+
+.body.white {
+    background: white;
+}
+
+.body.black {
+    background: black;
+}
+
+.ladder {
+    color: green;
+}
+
+.slide {
+    color: red;
+}
+
+.table {
+    border: 2px solid black;
+    width:200px
+}
+
+
+

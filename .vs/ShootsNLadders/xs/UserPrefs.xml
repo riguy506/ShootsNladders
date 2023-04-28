@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{1932FB78-51EE-4E0C-BF30-63EE50C44705}|https">
+  <MonoDevelop.Ide.ItemProperties.ShootsNLadders.Server PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Client/Shared/NavMenu.razor">
+    <Files>
+      <File FileName="Client/wwwroot/css/checkers.css" Line="24" Column="2" />
+      <File FileName="Client/wwwroot/index.html" Line="1" Column="1" />
+      <File FileName="Client/Data/Player.cs" Line="13" Column="30" />
+      <File FileName="Client/SNLBoard.razor" Line="218" Column="96" />
+      <File FileName="Client/Pages/Index.razor" Line="1" Column="1" />
+      <File FileName="Client/Shared/NavMenu.razor" Line="17" Column="11" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ShootsNLadders" expanded="True">
+            <Node name="ShootsNLadders.Client" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Pages" expanded="True" />
+              <Node name="Shared" expanded="True">
+                <Node name="NavMenu.razor" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

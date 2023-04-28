@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/ShootsNLadders.Server.props" />
+</Project>
